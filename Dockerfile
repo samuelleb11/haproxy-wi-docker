@@ -7,7 +7,6 @@ RUN apt-get update && \
 WORKDIR /var/www/haproxy-wi
 RUN git clone https://github.com/Aidaho12/haproxy-wi.git /var/www/haproxy-wi && \
 	 pip3 install -r requirements.txt
-RUN chmod +x app/tools/*.py
 RUN chmod +x app/*.py
 RUN mkdir keys
 RUN mkdir configs
