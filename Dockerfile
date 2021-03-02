@@ -6,9 +6,9 @@ RUN apt-get update && \
 
 WORKDIR /var/www/haproxy-wi
 RUN git clone https://github.com/Aidaho12/haproxy-wi.git /var/www/haproxy-wi && \
-	 pip3 install -r requirements.txt && \
-	 chmod +x app/tools/*.py && chmod +x app/*.py && mkdir keys configs configs/hap_config/ configs/kp_config/ /log/ && \
-	/var/www/haproxy-wi/app/create_db.py
+	 pip3 install -r requirements.txt
+RUN chmod +x app/tools/*.py && chmod +x app/*.py && mkdir keys configs configs/hap_config/ configs/kp_config/ /log/
+RUN /var/www/haproxy-wi/app/create_db.py
 
 COPY supervisord.conf /etc/supervisor/conf.d/additional.conf
 COPY nginx.conf /app/nginx.conf
