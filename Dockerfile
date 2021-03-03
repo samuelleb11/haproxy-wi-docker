@@ -6,7 +6,8 @@ RUN yum -y install rsyslog python36 python3-pip python3-devel python3-cryptograp
 RUN cd /var/www/ && \
 	git clone https://github.com/Aidaho12/haproxy-wi.git /var/www/haproxy-wi
 
-RUN pip3 install -r haproxy-wi/config_other/requirements_el8.txt && \
+RUN cd /var/www/ && \
+	pip3 install -r haproxy-wi/config_other/requirements_el8.txt && \
 	cp haproxy-wi/config_other/httpd/* /etc/httpd/conf.d/
 
 RUN cd /var/www/ && \
