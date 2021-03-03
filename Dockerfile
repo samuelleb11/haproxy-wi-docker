@@ -12,8 +12,7 @@ RUN cd /var/www/ && \
 	cp haproxy-wi/config_other/logrotate/* /etc/logrotate.d/ && \
 	cp haproxy-wi/config_other/syslog/* /etc/rsyslog.d/
 
-RUN mkdir /var/www/haproxy-wi/app/certs && \
-	mkdir /var/www/haproxy-wi/keys && \
+RUN mkdir /var/www/haproxy-wi/keys && \
 	mkdir /var/www/haproxy-wi/configs/ && \
 	mkdir /var/www/haproxy-wi/configs/hap_config/ && \
 	mkdir /var/www/haproxy-wi/configs/kp_config/ && \
