@@ -37,10 +37,10 @@ steps:
       password:
         from_secret: docker_password
       repo: saaq.whnet.ca/samuelleb11/haproxy-wi-docker
-      cache_from: "saaq.whnet.ca/samuelleb11/haproxy-wi-docker:0.0.1"
+      cache_from: "saaq.whnet.ca/samuelleb11/haproxy-wi-docker:${DRONE_COMMIT_BRANCH}-0.0.1"
       registry: saaq.whnet.ca
       tags:
-        - 0.0.1
+        - ${DRONE_COMMIT_BRANCH}-0.0.1
 
 volumes:
   - name: DroneIO-Cache
