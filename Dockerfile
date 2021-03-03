@@ -12,8 +12,6 @@ RUN cd /var/www/ && \
 	chmod +x haproxy-wi/app/*.py  && \
 	cp haproxy-wi/config_other/logrotate/* /etc/logrotate.d/ && \
 	cp haproxy-wi/config_other/syslog/* /etc/rsyslog.d/
-	
-RUN systemctl daemon-reload
 
 RUN systemctl restart httpd
 
