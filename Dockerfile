@@ -1,4 +1,4 @@
-FROM centos8
+FROM centos:centos8
 RUN cd /var/www/ && \
 	git clone https://github.com/Aidaho12/haproxy-wi.git /var/www/haproxy-wi && \
 	yum -y install python36 python3-pip python3-devel python3-cryptography python3-jinja2 nmap-ncat net-tools lshw python3-ldap rsync ansible dos2unix nmap mod_ssl httpd && \
