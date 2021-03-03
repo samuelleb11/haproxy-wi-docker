@@ -46,3 +46,6 @@ volumes:
   - name: DroneIO-Cache
     host:
       path: /var/lib/cache
+
+image_pull_secrets:
+  - dockerconfigjson
