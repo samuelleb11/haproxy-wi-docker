@@ -11,11 +11,15 @@ RUN cd /var/www/ && \
 RUN cd /var/www/ && \
 	chmod +x haproxy-wi/app/*.py  && \
 	cp haproxy-wi/config_other/logrotate/* /etc/logrotate.d/ && \
-	cp haproxy-wi/config_other/syslog/* /etc/rsyslog.d/ && \
-	systemctl daemon-reload && \
-	systemctl restart httpd && \
-	systemctl restart rsyslog && \
-	mkdir /var/www/haproxy-wi/app/certs && \
+	cp haproxy-wi/config_other/syslog/* /etc/rsyslog.d/
+	
+RUN systemctl daemon-reload
+
+RUN systemctl restart httpd
+
+RUN systemctl restart rsyslog
+
+RUN mkdir /var/www/haproxy-wi/app/certs && \
 	mkdir /var/www/haproxy-wi/keys && \
 	mkdir /var/www/haproxy-wi/configs/ && \
 	mkdir /var/www/haproxy-wi/configs/hap_config/ && \
