@@ -17,9 +17,7 @@ RUN mkdir /var/www/haproxy-wi/keys && \
 	mkdir /var/www/haproxy-wi/configs/hap_config/ && \
 	mkdir /var/www/haproxy-wi/configs/kp_config/ && \
 	mkdir /var/www/haproxy-wi/configs/nginx_config/ && \
-	mkdir /var/www/haproxy-wi/log/ && \
-	chown -R root:root /var/www/haproxy-wi/
+	mkdir /var/www/haproxy-wi/log/
 
 RUN	cd /var/www/haproxy-wi/app && \
-	./create_db.py && \
-	chown -R root:root /var/www/haproxy-wi/
+	./create_db.py
