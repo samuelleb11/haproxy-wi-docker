@@ -17,7 +17,10 @@ RUN mkdir /var/www/haproxy-wi/keys && \
 	mkdir /var/www/haproxy-wi/configs/hap_config/ && \
 	mkdir /var/www/haproxy-wi/configs/kp_config/ && \
 	mkdir /var/www/haproxy-wi/configs/nginx_config/ && \
-	mkdir /var/www/haproxy-wi/log/
+	mkdir /var/www/haproxy-wi/log/ && \
+	chown -R apache:apache /var/www/haproxy-wi/
 
 RUN	cd /var/www/haproxy-wi/app && \
-	./create_db.py
+	./create_db.py && \
+	chown -R apache:apache /var/www/haproxy-wi/ && \
+	usermod -a -G apache root
